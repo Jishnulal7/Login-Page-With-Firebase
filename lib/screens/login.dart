@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final VoidCallback showRegisterPage;
+  const LoginPage({Key? key,required this.showRegisterPage}):super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -47,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                   "Hello Again",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 35,
                   ),
                 ),
                 const SizedBox(
@@ -117,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.deepPurple),
                       child: const Center(
                           child: Text(
-                        'Login',
+                        'Sign In',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -131,13 +133,16 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text('Not a Member?'),
-                    Text(
-                      'Register Now',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.deepPurple),
+                  children: [
+                    const Text('Not a Member?'),
+                    GestureDetector(
+                      onTap: widget.showRegisterPage,
+                      child: const Text(
+                        'Register Now',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepPurple),
+                      ), 
                     )
                   ],
                 )

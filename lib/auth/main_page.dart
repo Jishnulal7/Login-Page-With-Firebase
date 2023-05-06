@@ -1,17 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_project/screens/login.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/home_page.dart';
+import 'user_auth.dart';
 
-class UserAuth extends StatefulWidget {
-  const UserAuth({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<UserAuth> createState() => _UserAuthState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _UserAuthState extends State<UserAuth> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _UserAuthState extends State<UserAuth> {
         if(snapshot.hasData){
           return const HomePage();
         }else{
-          return const LoginPage();
+          return  const UserAuth();
         }
       },),
     );
