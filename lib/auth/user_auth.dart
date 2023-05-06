@@ -22,7 +22,7 @@ class _UserAuthState extends State<UserAuth> {
     if (showLoginPage) {
       return LoginPage(showRegisterPage: toggleScreen);
     } else {
-      return RegisterPage(showLoginPage: toggleScreen);
+      return RegisterPage(showLoginPage: toggleScreen );
     }
   }
 }
