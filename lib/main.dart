@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_project/screens/login.dart';
 import 'package:flutter/material.dart';
 
-import 'screens/auth_user_page.dart';
+import 'auth/auth_user_page.dart';
 
 void main() async {
 
